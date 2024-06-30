@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Password</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+       
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            --bg-color: rgb(225, 199, 223);
+            margin: 0;
+        }
+        .divforma {
+            background-color: rgba(255, 255, 255, 0.566);
+            border: 2px solid rgb(0, 0, 0);
+            width: 300px;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        #inputi {
+            border-radius: 10px;
+            width: 80%;
+            height: 30px;
+            text-align: center;
+        }
+        .pulla {
+            width: 80%;
+            height: 30px;
+            border-radius: 10px;
+            background-color: rgb(248, 75, 202);
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        .pulla:hover {
+            background-color: rgb(200, 60, 160);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="divforma">
+        <form id="passwordForm">
+            <h1>Guess the password!</h1>
+            <h2>Here is a hint: Sa shum tdu?</h2>
+            <p>kerjt me ni fjal shkruje*
+            </p>
+            <br>
+            <input type="text" name="inputi" id="inputi">
+            <br><br>
+            <button type="submit" class="pulla">Try</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var inputi = document.getElementById('inputi').value;
+            if (inputi.toLowerCase() === "sadeti") {
+                window.location.href = 'home.html';
+            } else {
+                alert('Incorrect password, try again!');
+            }
+        });
+    </script>
+</body>
+</html>
